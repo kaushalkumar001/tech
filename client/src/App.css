@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid Layout */
+.grid-two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.main-image {
+  border-radius: 10px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #646cff;
+  color: white;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  color: yellow;
+}
+
+/* Discover Section */
+.discover-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #646cff;
+  color: white;
+}
+
+.discover-line {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Transform Section */
+.transform-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.transform-line {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* College Journey Section */
+.college-journey-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #ff5A60;
+  color: white;
+}
+
+.college-line {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.started-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: #ff5A60;
+  cursor: pointer;
+}
+
+/* Unlock Section */
+.unlock-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #646cff;
+  color: white;
+}
+
+.unlock-line {
+  font-size: 1.5rem;
+}
+
+/* CSE Section */
+.cse-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.cse-content {
+  text-align: center;
+}
+
+/* Pharmacy Section */
+.pharmacy-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.pharmacy-content {
+  text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    flex-direction: column;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.div-container {
+  width: 80%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.box {
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: lightgray;
+}
