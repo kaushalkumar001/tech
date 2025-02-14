@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { NavLink } from 'react-router-dom';
 import emailjs from "@emailjs/browser";
 
 export const Home = () => {
@@ -33,9 +34,9 @@ export const Home = () => {
           <source src="/images/video1.mp4" type="video/mp4" />
         </video>
         <div className="btn-group">
-          <a href="/Contact">
+          <NavLink to="/Contact">
             <button className="btn">Connect Now</button>
-          </a>
+          </NavLink>
           <a href="https://sviet.org.in/">
             <button className="secondary-btn">Learn More</button>
           </a>
@@ -99,9 +100,9 @@ export const Home = () => {
         <div className="hero-container">
           <p className="college-line" style={{ backgroundColor: "#ff5A60" }}>
           Report Issues, Get Quick Solutions!
-            <a href="/Contact">
+            <NavLink to="/Contact">
               <button className="started-btn">Get Started</button>
-            </a>
+            </NavLink>
           </p>
         </div>
       {/* Email Form */}
@@ -113,45 +114,41 @@ export const Home = () => {
         </div>
       
         <section>
-  <form ref={form} onSubmit={sendEmail}>
-    <label>Name</label>
-    <input type="text" name="user_name" required />
+        <img 
+                    src="/images/issue.png" 
+                    width="500" 
+                    height="500" 
+                    style={{ mixBlendMode: 'multiply' }} 
+                  />
 
-    <label>Phone Number</label>
-    <input type="tel" name="phone_number" required />
-    <br/>
+          <form ref={form} onSubmit={sendEmail}>
+            <input placeholder="Name" type="text" name="user_name" required />
+            <input placeholder="Phone Number" type="tel" name="phone_number" required />
+            <br/>
 
 
-    <label>Block</label>
-    <select name="user_block" required>
-      <option value="">Select Block</option>
-      <option value="D Block">D Block</option>
-      <option value="F Block">F Block</option>
-      <option value="I Block">I Block</option>
-      <option value="J Block">J Block</option>
-    </select>
-    <br/>
-    <br/>
 
-    <label>Room Number</label>
-    <input type="tel" name="Room_Number" required />
+            <select name="user_block" required>
+              <option value="">Select Block</option>
+              <option value="D Block">D Block</option>
+              <option value="F Block">F Block</option>
+              <option value="I Block">I Block</option>
+              <option value="J Block">J Block</option>
+            </select>
+            <br/>
+            <br/>
 
-    <label>Issue</label>
-    <textarea name="message" required></textarea>
-    <input type="submit" value="Send" />
-  </form>
-</section>
-<div class="footer-section pt-5 pb-5">
+            <input placeholder="Room Number" type="tel" name="Room_Number" required />
+
+                <textarea placeholder="issue"name="message" required></textarea>
+                    <input className="submit" type="submit" value="Submit" />
+           </form>
+        </section>
+     <div class="footer-section pt-5 pb-5">
         <div class="footer-container">
             <div class="row">
                 <div class="erp-container">
-                    <a href="tel=+917827295510" class="contact">Warden:- Mr Maniram</a>
-                    <br />
-                    <br />
-                    <br />
-
-                    <a href="tel=+917973543114" class="contact">Warden:- Mr Promod Sharma</a>
-                    <br />
+                  <div className="remove"></div>
                     <div class="xyz-container d-flex flex-row justify-content-center">
                         <div class="d-flex flex-column justify-content-center a-container">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX///8lHiEkHyEAAAAnHSH//f4gGx01MjObnJwSBwvNzMzk4+O4t7gjGR3y7/CKh4kWDhIZDRIhHR4UCQ4kISL39fYbGBmnpqYXEhR3dndDQEG/vb45NjcdFxnY09UXFRZKSEnHxsd/fX5kYGGXlJXh3t9HR0cvKixZVFZraWoQDQ6ysLGlo6RbWVo2NDSNi4wbYh70AAAHv0lEQVR4nO2dC3eiOhCAIQNYtIvdbER8YK2PWrGP///vbib4AAs+kIhw5zu7PZ5qga/DJJMEqGEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQTcGu+gCIm7ErYrtrvXLLn+l3qyK+p4slOur06w0gcBzuVETowkxvDL2WK1i1uMOeRkHjPeCMmVk7Nu/z2jSZO9cYwz7ICJp//r785u89XgdcGgoY6TMc+1Lw76rb/elWwmwVyjj6Y22CS5DnaPihNQ9O0xtLRQGeru2PpKEJE2yu992T4n6v3+QhCGiXZXTMM8h8By8z0e37vO6APE21GNq4C2lomvpOkfx9H9BnqBiBZVVgmESb4WS2AgBXdkcyiPdGDNAozsSOPI00GPbWIHt6h3NlyASiut/UV6Hn+3KHAcw9rYa9cYT7k72tPEnVf8SSLywr8dXU8338nbJo5Rm6DOV2p66qmeK9VgDu/PV7Z6ghDzeAZwqPJK7in8S9Iw6eQfBpaDK0jbEjDcPV4qkiFq1AWoXfKhF1xLADgrNwWuo2r2SOioBjXy0tTRuLUX197CUsVeDUiEKPoZDFaKfUbV6Jpwyf9cVQmI9iqCcP0dAiQ7000PBoNu0OeXg/Q2/y1l72jhxTMay14WTWUoMJ9+MzNVPSlBguhxBxNabgPsAi4diQPFyAH4+acCzBOLSW+8F9MwzXIIef8ZwvKgrhHzwaYTgAHKGZZmyohtk+TLZvNiEPN1gaMjNhyATz+fY0bUBb6mETY+LwfmeokjHqbt+uewxtYxbFUwhJQ9MUYrvb+uehrRZ8Uobb6ZmFer/+hiOIG9GkIb7m/rd6X7sh0204e0mcmwewV1zi+9rzULvhV5hpiIskb/i+9rZUt6E9dLINTeZu8AO1j6H9nW/Yxw/UPw/fc87SXzGsreE81zB2qb/hT7SvuY9jqJbyap+HaheZhtuJ6Nq3pYYR5MQQ+mqMWPsY2kYfMg0dEQ/0a5+HtuwvfDlcOspBGatN/IH6G9rGBIQ4NmTux3Yeo/aGyDOu/yTHhowF491kVO3zUNEHJ5GJOPwd7i/6aEBbqvbjg3OYigphbf+ea6t1DCULjlfnyjHTHxc+2sbhqq9G5KGiNxoMhc9XH4tJ6rq2xhgqoZ7n7a5Xb55hLo3Jw1wa0pae4H8Ww2bnIRkWQ6/hpN9vn719osZ5uJwCuDA8d8D1bUs/4RUXfX05DjwZx7rGsPMBu3uoYHCZYb3ycBQEYr8e6r6fuj6+lob2DMdKIja05HCXTfI/XD9D22gLl6Xm15gD/dzP1zAPF8DjRfvE/BqDWd7Ha9eWdqayiVEX5acmEBlMc5KxbjF8TsxWpGfXAjc7GeuVh701cLbPQStlqJIx4y7fWhm2ecTY3tA6MuQcBhk/VCND2Uf4ImuB4jCJiD3jcRQfKA/P1NDLcSRE5hJMQjFgv47/IdrS3tP8a3Bmx33wT+rFcOdXmfoIMewDvPoBzE/cIux9xJ3gOfAak0GOYUV5aGMNje2jYO4wp0ezjdFrcIlfvGYRpXvGqg1lhfLKt08ECP2cnQ/wd3CxIQt4cjtVGsqzqd2C/bGznPJyIqLsRd5cS2d7r1ra8P55aBu9Xftv7ZOoe/wZdYEzClpnxFKOiTK1yrZ0JCJ18bK167vxUL7S7Y1sYq6J3247/FCmVhdDb74tMROG8thezOSnN3gPcXqodJEhY687k8rysB8FuwIsEUP5L4zwTrp4oWUN7MB1hvsytSJDOQbiLMtQtRNPcQXdFi9CFDZkAstUuxpD++dUhclMXMLFZsgxr3VLa6q1bk/d5HnfPJRdBD9RYWIFLdsJWWjvwlHUUGCZuje8W1uquohTPbjqtP0l9hNmYb94OzyETe/eMRxBdKbC3LYTGyxYC+uZ5vYODFg7/H55KH+L89SlL/mGUrGLcxY3xVB9xQcLaTZM3Afch+D8eafaQTwUOdgYpS6UKWTItBtu7+XGq7OGcGYMmzo+Hq2WxuQlPL4fpois1jxUhtj6/+RNk+UY4pn6Ziz98GZDzW2p3DzG8K3lFigwZeffWQXxUd5qqC+GaOit4wBef2hr23t/uanXSMZQTx5Kw00YYFltXm+II3Z76j64oSOLUF7syNSIfWLMoaQ81NRbmH9uOL648x/AYxve0k7ggEp2/l0odBYkDe1tzmgwvGL+IecI4Wu3plbUUD29ZRruWvaSDY9WGIoc4cuq85x9Sf5lBIPPp8UKCype8pMh94Y3OcoDC923txsUWeC6UfzIqDOXbhQytCzrtijGpWV/cvG0afYWVMs8Lfkxu+2b2sA0MJgEeXfiXWoYlf6U3TINzX/T9jgsaijD77iwLv3xqaUamuFqNAyKGboAsOpqeCRXuYbyTP38CgqVt8/lu+kxZDCbX69YJ0N5un2h4iMZinINZZE7nl5b3exqGg3Y3g21Vh7OqnX9SHqpyRAf4n1DxZwN51fH0NH2EG8bb5wr2/DakQquYORf2He749wt/TS9si1lInjX52cbvaGrVpesQ3V619f4GJeW3idQ2zOI/uzAPzNxz9eOE0Yw0P6k++ViOq7uD5P8nLh+uCnQ3yYiCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgCIIgiEfgP0yLsbOkSMxJAAAAAElFTkSuQmCC" class="image" />
@@ -171,6 +168,14 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
+                <div className="contactmaniram">
+                  <NavLink to="tel=+917827295510"> Warden:- Mr Maniram</NavLink>
+                </div>
+                <div className="contactpromod">
+                 <NavLink to="tel=+917973543114"> Chif Warden:- Mr Promod Sharma</NavLink>
+                </div>
+
+
                 <div className="kaushal">
                 <a href="https://www.linkedin.com/in/kaushal-kumar-0b9768310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Designed by ThoughtWorks Innovators</a>
                 </div>
@@ -183,6 +188,7 @@ export const Home = () => {
             </div>
         </div>
     </div>
+    
     </div>
   );
 };

@@ -12,14 +12,35 @@ ul {
     gap: 3.2rem
 }
 
-.logo {
-    background-image: url(https://www.amritahospitals.org/_next/image?url=http%3A%2F%2Fadmin.amritahospitals.org%2Fsites%2Fdefault%2Ffiles%2F2023-05%2FNAAC.png&w=640&q=75);
-    height: 50px;
-    width: 50px;
-    color: red;
-    font-weight: 800;
-    font-size: 3.2rem;
-    margin-top: -10px;
-    margin-right: 600px;
 
+.navbaricon:hover {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 0.2rem grey;
+    padding: 1.7px;
+
+}
+
+.sviet {
+    height: 40px;
+    width: 50px;
+}
+
+.logo-sviet {
+    width: 100px;
+    height: auto;
+    margin-top: -28px;
+    margin-left: -3px;
+
+}
+
+.logo-naac {
+    width: 200px;
+    height: auto;
+    margin-top: -28px;
+    margin-left: -200px;
+
+}
+
+.Logo_brand {
+    margin-left: -263px;
 }
