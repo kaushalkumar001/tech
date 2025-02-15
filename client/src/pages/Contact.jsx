@@ -7,31 +7,40 @@ export const Contact = () => {
           <main>
             <div className="section-registration">
               <div className="container grid grid-two-cols">
-              <div className="contantus">
+        
+              <div className="registration-image">
+                <div className="contantus">
                 CONTACT
-              </div>
-              <div className=" US">
+               </div>
+               <div className=" US">
                 US
               </div>
-                <div className="registration-image">
                   <img 
                     src="/images/contact.png" 
                     width="500" 
                     height="500" 
                     style={{ mixBlendMode: 'multiply' }} 
                   />
-                </div> 
+                  
+              </div> 
                 <div className="registration-details">
                   <div className="contactpage">
                     <p>Get in Touch With Us</p>
                     <br/>
                     <br/>
 
-                    <NavLink to="tel=+917827295510" className="contactus">Warden:- Mr Maniram</NavLink>
+                    <NavLink to="tel=+917827295510" className="contactus">Warden:- Mr Maniram 
+                      <div className="insidecontact">
+                      +91
+                      </div> </NavLink>
                     <br/>
                     <br/>
                     <br/>
-                    <NavLink to="tel=+917973543114" className="contactus">Cheif Warden:- Mr Promod Sharma</NavLink>
+                    <NavLink to="tel=+917973543114" className="contactus">Chief Warden:- Mr Promod Sharma
+                      <div className="insidecontactus">
+                        +919341594849
+                      </div>
+                    </NavLink>
 
                   </div>
                 </div>

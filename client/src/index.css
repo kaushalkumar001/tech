@@ -504,7 +504,8 @@ input[type="submit"]:hover {
 
 
 .contactpage {
-  margin-top: 100px;
+  margin-top: 140px;
+  margin-left: 80px;
 }
 
 .kaushal {
@@ -623,11 +624,32 @@ input[type="submit"]:hover {
 .contantus {
   font-size: 3.4rem;
   font-weight: bold;
+  margin-left: 100px;
 }
 
 .US {
   font-size: 3.4rem;
   font-weight: bold;
   color: #CE1815;
-  margin-left: 10px;
+  margin-left:280px;
+  margin-top: -43px;
 }
+
+.registration-image {
+  margin-right: 500px ;
+  margin: 10px;
+  padding-left: -300px;
+}
+
+
+.insidecontact {
+  margin-left: 220px;
+  margin-top: -23px;
+  color: #CE1815;
+}
+
+.insidecontactus {
+  margin-left: 220px;
+  color : #CE1815;
+}
+

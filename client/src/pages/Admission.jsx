@@ -112,10 +112,10 @@ export const Admission = () => {
               </div>
             </div>
             <div className="contactmaniram">
-              <NavLink to="tel:+917827295510"> Warden:- Mr Maniram</NavLink>
+              <NavLink to="tel:+919341594849"> Warden:- Mr Maniram</NavLink>
             </div>
             <div className="contactpromod">
-              <NavLink to="tel:+917973543114"> Chief Warden:- Mr Promod Sharma</NavLink>
+              <NavLink to="tel:+919113432689"> Chief Warden:- Mr Promod Sharma</NavLink>
             </div>
             <div className="kaushal">
               <a href="https://www.linkedin.com/in/kaushal-kumar-0b9768310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Designed by ThoughtWorks Innovators</a>

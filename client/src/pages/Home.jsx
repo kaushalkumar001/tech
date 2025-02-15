@@ -6,7 +6,7 @@ export const Home = () => {
   // Form Reference
   const form = useRef();
 
-  // Email Sending Function
+  // Email Sending Function 
   const sendEmail = (e) => {
     e.preventDefault();
 
