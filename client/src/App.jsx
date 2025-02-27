@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home"; 
-import { About } from "./pages/About"; 
+import { Login } from "./pages/Login"; 
 import { Contact } from "./pages/Contact";  // Import Contact component
 import { Admission } from "./pages/Admission";  // Import Admission component
 import { Gallery } from "./pages/Gallery";  // Import Gallery component
@@ -12,10 +12,10 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admission" element={<Admission />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </BrowserRouter>
   );

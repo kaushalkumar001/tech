@@ -8,6 +8,8 @@ export const Gallery = () => {
         Click here:- WELCOME TO PHOTO/VIDEO GALLERY....
       </a>
     </div>
+    
+
   );
 };
 
