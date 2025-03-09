@@ -35,9 +35,9 @@ ul {
 }
 
 .blackline {
-    font-size: 5.7rem;
+    font-size: 5.3rem;
     font-weight: lighter;
-    color: black;
+    color: rgb(17, 17, 17);
     margin-top: -33px;
     margin-right: -10px;
     margin-left: -180px;
