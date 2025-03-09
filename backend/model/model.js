@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+
 const userSchema = new mongoose.Schema({
-    name: { type: String },
-    email: { type: String, required: true },
+    name: { type: String, required: true }, // Ensuring name is required
+    email: { type: String, required: true, unique: true }, // Ensuring uniqueness for email
     password: { type: String, required: true },
     usertype: {
         type: String,
@@ -11,9 +12,11 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: String,
         unique: true,
-        sparse: true // This ensures uniqueness only when `phone` is provided
+        sparse: true // Ensures uniqueness only when `phone` is provided
     }
 });
 
-const User = mongoose.model("userSchema",userSchema)
-export default User
+// The model name should be "User" instead of "userSchema"
+const User = mongoose.model("User", userSchema);
+
+export default User;

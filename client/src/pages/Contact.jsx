@@ -10,39 +10,47 @@ export const Contact = () => {
         
               <div className="registration-image">
                 <div className="contantus">
-                CONTACT
+                CONTACT <span class="us">US</span>
                </div>
-               <div className=" US">
-                US
-              </div>
+              <div className="img-contact-container">
+                <div>
                   <img 
-                    src="/images/contact.png" 
-                    width="500" 
-                    height="500" 
-                    style={{ mixBlendMode: 'multiply' }} 
-                  />
-                  
-              </div> 
+                      src="/images/contact.png" 
+                      width="500" 
+                      height="500" 
+                      style={{ mixBlendMode: 'multiply' }} 
+                    />
+                </div> 
+
                 <div className="registrationdetails">
                   <div className="contactpage">
                     <p>Get in Touch With Us</p>
                     <br/>
                     <br/>
 
-                    <NavLink to="tel=+917827295510" className="contactus">Warden:- Mr Maniram 
+                    <NavLink to="tel= +917827295510" className="contactus">Warden:- Mr Maniram (Boys)
                       <div className="insidecontact">
                       +917827295510
                       </div> </NavLink>
                     <br/>
                     <br/>
                     <br/>
-                    <NavLink to="tel=+917973543114" className="contactus">Chief Warden:- Mr Pramod Sharma
+                    <NavLink to="tel= +917973543114" className="contactus">Chief Warden:- Mr Pramod Sharma (Boys)
                       <div className="insidecontactus">
                         +919341594849
                       </div>
                     </NavLink>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <NavLink to="tel= +917347528095" className="contactus">Warden:- Mrs Manvir Kaur (Girls)
+                      <div className="insidecontact">
+                      +917347528095
+                      </div> </NavLink>
 
                   </div>
+                </div>
+                </div>
                 </div>
               </div>
             </div>

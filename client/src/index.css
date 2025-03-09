@@ -827,7 +827,7 @@ input[type="submit"]:hover {
 
 .insidecontact {
   margin-left: 220px;
-  margin-top: -23px;
+  margin-bottom: 0px;
   color: #CE1815;
 }
 
@@ -887,4 +887,17 @@ input[type="submit"]:hover {
 .login-heading {
   font-size: 2rem;
 
+}
+
+.img-contact-container{
+  display:flex;
+  flex-direction: row;
+}
+
+.us{
+  color:#CE1815;
+}
+
+.registrationdetails {
+  margin-bottom: 200px;
 }

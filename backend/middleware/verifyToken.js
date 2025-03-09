@@ -1,19 +1,18 @@
-import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 dotenv.config();
 
-const JWT_SECRET = process.env.JWT_SECRET;
+console.log("JWT SECRET:", process.env.SECRET); // Debugging to check if SECRET is loaded
 
 const verifyToken = (req, res, next) => {
   // Get the token from cookies
-  const token = req.cookies.token; // Make sure 'cookie-parser' middleware is used
+  const token = req.cookies?.token; // Ensure 'cookie-parser' middleware is used
 
-  
   if (!token) {
     return res.status(401).json({ error: 'No token provided' });
   }
 
-  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+  jwt.verify(token, process.env.SECRET, (err, decoded) => {
     if (err) {
       return res.status(401).json({ error: 'Invalid token' });
     }
@@ -23,4 +22,4 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-module.exports = verifyToken;
+export default verifyToken;
