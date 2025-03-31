@@ -28,14 +28,14 @@ export const Contact = () => {
                     <br/>
                     <br/>
 
-                    <NavLink to="tel= +917827295510" className="contactus">Warden:- Mr Maniram (Boys)
+                    <NavLink to="tel:+917827295510" className="contactus">Warden:- Mr Maniram (Boys)
                       <div className="insidecontact">
                       +917827295510
                       </div> </NavLink>
                     <br/>
                     <br/>
                     <br/>
-                    <NavLink to="tel= +917973543114" className="contactus">Chief Warden:- Mr Pramod Sharma (Boys)
+                    <NavLink to="tel:+917973543114" className="contactus">Chief Warden:- Mr Pramod Sharma
                       <div className="insidecontactus">
                         +919341594849
                       </div>
@@ -43,7 +43,7 @@ export const Contact = () => {
                     <br/>
                     <br/>
                     <br/>
-                    <NavLink to="tel= +917347528095" className="contactus">Warden:- Mrs Manvir Kaur (Girls)
+                    <NavLink to="tel:+917347528095" className="contactus">Warden:- Mrs Manvir Kaur (Girls)
                       <div className="insidecontact">
                       +917347528095
                       </div> </NavLink>

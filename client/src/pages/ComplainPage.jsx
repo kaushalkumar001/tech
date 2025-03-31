@@ -1,32 +1,70 @@
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { NavLink } from "react-router-dom"; // Import NavLink for routing
+import axios from "axios";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
-export const Admission = () => {
-  const form = useRef();
+export const ComplainPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    block: "",
+    room: "",
+    issue: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("service_euk1hfr", "template_70gf6rc", form.current, {
-        publicKey: "xcHzgoyej1rZa-iBq",
-      })
-      .then(
-        () => {
-          alert("Email sent successfully!");
-        },
-        (error) => {
-          alert("Email sending failed. Try again.");
-          console.error("FAILED...", error.text);
-        }
-      );
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+        const token = localStorage.getItem('token');
+        if (!token) throw new Error("Not authenticated");
+
+        // Transform data to match backend expectations
+        const complaintData = {
+            name: formData.name,
+            block: formData.block,
+            room: formData.room,
+            issue: formData.issue,
+            phoneNumber: formData.phone // Map 'phone' to 'phoneNumber'
+        };
+
+        const response = await axios.post(
+            "http://127.0.0.1:4500/api/auth/complaints", 
+            complaintData,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        // Handle success
+        console.log("Response:", response.data);
+        alert("Complaint submitted!");
+        setFormData({ name: "", phone: "", block: "", room: "", issue: "" });
+
+    } catch (error) {
+        console.error("Error:", error);
+        alert(error.response?.data?.message || "Submission failed");
+    }
+};
+
+console.log(localStorage.getItem('token'))
 
   return (
     <>
       <section>
-        <div className="rule">
+      <div className="rule">
           <div className="rulehostel">
             <h2>RULES & REGULATIONS FOR </h2>
             <div className="ruleshostel">
@@ -57,11 +95,30 @@ export const Admission = () => {
         </div>
       
         <div className="service-image">
-          <form ref={form} onSubmit={sendEmail}>
-            <input placeholder="Name" type="text" name="user_name" required />
-            <input placeholder="Phone Number" type="tel" name="phone_number" required />
+          <form onSubmit={handleSubmit}>
+            <input 
+              name="name"
+              placeholder="Name" 
+              type="text" 
+              required 
+              value={formData.name} 
+              onChange={handleChange}
+            />
+            <input 
+              name="phone"
+              placeholder="Phone Number" 
+              type="tel" 
+              required 
+              value={formData.phone} 
+              onChange={handleChange}
+            />
             <br />
-            <select name="user_block" required>
+            <select 
+              name="block"
+              required 
+              value={formData.block} 
+              onChange={handleChange}
+            >
               <option value="">Select Block</option>
               <option value="D Block">D Block</option>
               <option value="F Block">F Block</option>
@@ -70,23 +127,36 @@ export const Admission = () => {
             </select>
             <br />
             <br />
-            <input placeholder="Room Number" type="tel" name="Room_Number" required />
-            <textarea placeholder="Issue" name="message" required></textarea>
-            <input className="submit" type="submit" value="Submit" />
+            <input 
+              name="room"
+              placeholder="Room Number" 
+              type="tel" 
+              required  
+              value={formData.room} 
+              onChange={handleChange}
+            />
+            <textarea 
+              name="issue"
+              placeholder="Issue" 
+              required 
+              value={formData.issue} 
+              onChange={handleChange}
+            />
+            <button type="submit"name="submit" className="submit">Submit</button>
           </form>
         </div>
       </section>
+
       <div className="whatsapp">
         <h2 className="stay"> Stay connected with us on 📲✨</h2>
-        
-        <br />
-        <h2 className="join"> Join the D Block Students WhatsApp Group! 📲✨ Stay connected, informed, and engaged!</h2>
+        <h2 className="join"> Join the D Block Students WhatsApp Group! 📲✨ Stay connected, informed, and engaged!</h2> 
         <div className="qr">
-          <img src="/images/qr.png" width="490" height="500" style={{ mixBlendMode: 'multiply' }} alt="QR Code" />
+          <img src="/images/qr.png" width="490" height="500" style={{ mixBlendMode: 'multiply' }} />
         </div>
       </div>
-       <div className="footer-section pt-5 pb-5">
-                <div className="footer-container">
+
+      <div className="footer-section pt-5 pb-5">
+      <div className="footer-container">
                   <div className="row">
                     <div className="erp-container">
                       <div className="remove"></div>
@@ -129,10 +199,9 @@ export const Admission = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-      
+      </div>
     </>
   );
 };
 
-export default Admission;
+export default ComplainPage;

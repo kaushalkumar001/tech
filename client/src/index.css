@@ -259,6 +259,7 @@ color:#535bf2;
   font-size: 1.5rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  text-align: center;
   position: relative;
   display: flex;
   
@@ -269,8 +270,6 @@ color:#535bf2;
   margin-bottom:-340px;
   height: 350px;
   width: 400px;
-
-
 
 }
 
@@ -588,7 +587,6 @@ input[type="submit"]:hover {
 
 
 .footer-section {
-
   background-size: cover;
   margin-left: 30px;
   margin-right: 30px;
@@ -682,15 +680,13 @@ input[type="submit"]:hover {
   color:#d18ff0;
   font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin-left: 820px;
-  margin-top: -20px;
+  margin-top: -22px;
 }
 
 .kaushal:hover {
   background-color: transparent;
-  box-shadow: inset 0 0 0 0.2rem black;
   margin-right: 0.6rem;
 }
-
 
 
 .contactmaniram {
@@ -762,7 +758,7 @@ input[type="submit"]:hover {
 .ruleshostel {
   color: red;
   margin-left: 305px;
-  margin-top: -26px;
+  margin-top: -25.5px;
 }
 
 .service-image {
@@ -884,9 +880,16 @@ input[type="submit"]:hover {
 }
 
 
-.login-heading {
+.please-heading {
   font-size: 2rem;
+  margin-bottom: -23px;
+}
 
+.continue-heading {
+  font-size: 2rem;
+  color: red;
+  margin-left: 325px;
+  padding-bottom: -10px;
 }
 
 .img-contact-container{
@@ -900,4 +903,81 @@ input[type="submit"]:hover {
 
 .registrationdetails {
   margin-bottom: 200px;
+}
+
+
+/* Corrected class names */
+
+.containera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.carda {
+  background-color: white;
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carda:hover {
+  transform: translateY(-10px);
+}
+
+.card-titlea {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-textaa {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.button-groupa {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button styles */
+.btn-approved {
+  background-color: green;
+  color: white;
+}
+
+.btn-approved:hover {
+  background-color: darkgreen;
+}
+
+.btn-pending {
+  background-color: yellow;
+  color: black;
+}
+
+.btn-pending:hover {
+  background-color: gold;
+}
+
+.btn-reject {
+  background-color: red;
+  color: white;
+}
+
+.btn-reject:hover {
+  background-color: darkred;
 }

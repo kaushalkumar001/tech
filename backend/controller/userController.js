@@ -1,8 +1,9 @@
 import User from '../model/model.js';
+import { Complaint } from '../model/complains.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-// Login Controller
+// Login Controller API
 export const login = async (req, res) => {
     try {
         // Get data from request body
@@ -103,6 +104,53 @@ export const signup = async (req, res) => {
         return res.status(500).json({
             success: false,
             message: "Signup failed, please try again."
+        });
+    }
+};
+
+
+
+export const createComplaint = async (req, res) => {
+    try {
+        // Authentication check
+        if (!req.user || !req.user._id) {
+            return res.status(401).json({
+                success: false,
+                message: "Authentication required"
+            });
+        }
+
+        // Destructure and validate
+        const { name, block, room, issue, phoneNumber } = req.body;
+        
+        if (!name || !block || !room || !issue || !phoneNumber) {
+            return res.status(400).json({
+                success: false,
+                message: "All fields are required"
+            });
+        }
+
+        // Create complaint
+        const newComplaint = await Complaint.create({
+            name,
+            block,
+            room,
+            issue,
+            phoneNumber,
+            userId: req.user._id // From auth middleware
+        });
+
+        return res.status(201).json({
+            success: true,
+            message: "Complaint created successfully",
+            data: newComplaint
+        });
+
+    } catch (err) {
+        console.error("Error:", err);
+        return res.status(500).json({
+            success: false,
+            message: "Server error"
         });
     }
 };

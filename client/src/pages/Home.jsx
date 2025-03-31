@@ -61,8 +61,8 @@ export const Home = () => {
                   />
 
              <div className="box1in">
-              <h2 style={{ color: "#FEA700E6" }}>Clean Drinking Water </h2>
-              <p>"Clean drinking water ensures students stay healthy, hydrated, and focused on learning."</p>
+              <h2 style={{ color: "#FEA700E6", textAlign: "center" }}>Clean Drinking Water</h2>
+              <p style={{textAlign: "center" }}>"Clean drinking water ensures students stay healthy, hydrated, and focused on learning."</p>
              </div>
             </div>
             <div className="box2">
@@ -72,8 +72,8 @@ export const Home = () => {
                     height="400"  
                   />
               <div className="box2in">
-                <h2 style={{ color: "#FEA700E6"}}>The Hostel Gym</h2>
-                <p>"The Hostel Gym provides a convenient, equipped space for students to stay fit."</p>
+                <h2 style={{ color: "#FEA700E6", textAlign: "center"}}>The Hostel Gym</h2>
+                <p style={{textAlign: "center" }}>"The Hostel Gym provides a convenient, equipped space for students to stay fit."</p>
               </div>
             </div>
             <div className="box3">
@@ -83,8 +83,8 @@ export const Home = () => {
                     height="400"  
                   />
               <div className="box3in">
-                <h2 style={{ color: "#FEA700E6"}}>Hostel Laundry Hub</h2>
-                <p>"Providing convenient and efficient laundry services to ensure cleanliness for all hostel"</p>
+                <h2 style={{ color: "#FEA700E6", textAlign: "center"}}>Hostel Laundry Hub</h2>
+                <p style={{textAlign: "center" }}>"Providing convenient and efficient laundry services to ensure cleanliness for all hostel"</p>
               </div>
             </div>
           </div>
@@ -247,7 +247,7 @@ export const Home = () => {
               </div>
 
               <div className="kaushal">
-                <a href="https://www.linkedin.com/in/kaushal-kumar-0b9768310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Designed by ThoughtWorks Innovators</a>
+                <a href="https://www.linkedin.com/in/kaushal-kumar-0b9768310?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Designed by ThoughtWorks Team</a>
               </div>
 
               <div className="mail-section">
